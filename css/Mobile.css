@@ -1,0 +1,227 @@
+@media (max-width: 1023px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-smoothing: grayscale;
+}
+:root {
+    font-family: "Mulish", sans-serif;
+    font-size: 62.5%;
+    --color-white-pure: #FFFFFF;
+    --color-white-100: #F4FCFF;
+    --color-SteelBlue-navigation: #387E96;
+    --color-SteelBlue-Search: hsla(0, 0%, 100%, 0.200);
+    --color-black-pure: #0000;
+}
+body {
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6rem;
+    width: 100vw;
+
+}
+header {
+
+    background-color: var(--color-SteelBlue-navigation);
+    padding: 1.6em 2.8em;   
+    justify-content: center;
+    width: 100%;
+
+}
+main {
+    width: 100%;
+}
+main h1 {
+    padding-left: 2.9rem;
+    margin-bottom: .8rem;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-SteelBlue-navigation);
+    padding: 1.6em 2.8em;   
+    color: var(--color-white-100);
+}
+.featured img{
+    width: 100%;
+}
+
+.nav-bar label {
+    display: none;
+}
+.nav-bar input {
+    font-family: "Mulish", sans-serif;
+    width: 24.1em;
+    height: fit-content;
+    background-color: var(--color-SteelBlue-Search);
+    border-style: none;     
+    border-radius: .4rem;
+    padding: 1.2em 1.4em;
+    
+}
+input::placeholder{
+    overflow: hidden;
+    color: var(--color-white-pure) ;
+    border-style: none;
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+input:focus {
+    font-family: "Mulish", sans-serif;
+    outline: none;
+    color: var(--color-white-pure);
+}
+input::selection {
+    border-style: none;
+}
+.nav-bar nav {
+    display: flex;
+    gap: 2.6rem;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar img {
+    max-width: 4.0rem;
+    max-height: 4.0rem;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.featured img {
+    border-radius: .5rem;
+    margin-bottom: 3.1em;
+
+
+}
+.icon {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 3.1rem;
+    padding: 0;
+
+}
+.contents img {
+    transition: linear;
+    filter: blur(2px);
+}
+
+
+.featured-text, .icon {
+    padding: 0 2.2em;
+}
+.title-featured {
+    margin-bottom: .8em;
+}
+.icon {
+    margin-bottom: 3.2em;
+    width: 100%;
+
+}
+.icon button:hover {
+    transform: scale(1.2) rotate(2deg);
+    object-fit: cover;
+
+}
+#like {
+    width: 4.0rem;
+    height: 4.0rem;
+    
+    background-image: url(/assets/img/like.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-style: none;
+}
+#deslike {
+    width: 4.0rem;
+    height: 4.0rem;
+    
+    background-image: url(/assets/img/deslike.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-style: none; 
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2em;
+    padding: 0 2.2em 4.3em 2.2em;
+    margin-top: 3.4em;
+}
+
+.contents {
+    display: flex;
+    gap: 1.6em;
+    padding: 0;
+    margin: 0;
+    max-width: 38.4rem;
+    object-fit: cover;
+    overflow: hidden;
+}
+.contents img {
+    min-width: 15.1rem;
+    min-height: 8.4rem;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+.contents {
+    transition: linear;
+    filter:  grayscale(0.8);
+}
+.contents:hover {
+    transition: linear;
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+
+/* Animation  Footer and  Nav-bar*/
+
+header {
+    --startY: -100%;
+    animation-name: move;
+    animation-duration: 500ms;
+    animation-fill-mode: backwards;
+}
+
+footer {
+    --startY: 100%;
+    animation-name: move;
+    animation-duration: 500ms;
+    animation-fill-mode: backwards;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY))
+    }
+}
+
+   
+   
+   /* Animation main*/
+   
+   .featured, .contents, .icon, .featured-text, .item, .featured-title {
+       --delay: 0.4s;
+       animation: apprace 2s var(--delay) backwards;
+       animation-timing-function: ease-in;
+   }
+   
+   @keyframes apprace {
+       0% {
+           opacity: 0;
+       }
+       
+       50% {
+           opacity: 1;
+       }
+   }
+
+
+}
+
